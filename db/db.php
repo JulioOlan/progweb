@@ -1,6 +1,6 @@
  <?php
 date_default_timezone_set('America/Mexico_City');
-$servername = "localhost";
+$servername = "localhost:3305";
 $username = "root";
 $password = "";
 $dbname = "web";
