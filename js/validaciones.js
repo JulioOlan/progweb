@@ -110,6 +110,38 @@ $('#guardar').on('click', function (e) {
 
 });
 
+$('#actualizar').on('click', function (e) {
+    e.preventDefault();
+
+    if (campos.nombre && campos.appat && campos.apmat && campos.mail && campos.no_control && campos.telefono) {
+        let params = $('form').serializeArray();
+
+        document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+        // document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+
+        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formulario__grupo-correcto');
+        });
+        $.ajax({
+            url: 'update_exe.php',
+            type: 'POST',
+            data: params,
+            dataType: 'json',
+        }).done(function (data) {
+
+        })
+        formulario.reset();
+        Swal.fire({
+                icon: 'success',
+                title: 'ÉXITO!',
+                text: 'Datos registrados correctamente',
+            })
+    } else {
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+    }
+
+});
+
 // document.getElementById ("guardar").formulario.addEventListener('click', (e) => {
 //     // e.preventDefault();
 
