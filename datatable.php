@@ -45,6 +45,8 @@
 						<th>Nombre(s)</th>
 						<th>Fecha Nacimiento</th>
 						<th>Estado Civil</th>
+						<th>No. de Control</th>
+						<th>Carrera</th>
 						<th>Acciones</th>
 					</tr>
 				</thead>
@@ -64,6 +66,18 @@
 									echo "Soltero";
 								} else {
 									echo "Casado";
+								}
+								?></td>
+							<td><?= $row["no_control"] ?></td>
+							<td><?php
+								if ($row["carrera"] == 0) {
+									echo "Ing. en Sistemas";
+								} elseif ($row["carrera"] == 1){
+									echo "Ing. Cívil";
+								} elseif ($row["carrera"] == 2){
+									echo "Ing. en Gestión Empresarial";
+								} else{
+									echo "Ing. Industrial";
 								}
 								?></td>
 							<!-- ?id= Se usa para pasar por get una variable de nombre id y despues del signo = se coloca el valor de la variable, en este caso se tomará de la variable $row['id'] -->
@@ -114,7 +128,7 @@
 					"loadingRecords": "Cargando registros...",
 					"lengthMenu": "Mostrar _MENU_ resultados por página",
 					"zeroRecords": "Sin resultados",
-					"info": "Mostrando página _PAGE_ of _PAGES_",
+					"info": "Mostrando página _PAGE_ de _PAGES_",
 					"infoEmpty": "Los datos no se han cargado...",
 					"infoFiltered": "(filtrando de _MAX_ registros)",
 					"search": "Buscar:",

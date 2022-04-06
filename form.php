@@ -54,8 +54,6 @@
 					</div>
 					<p class="formulario__error">El apellido materno debe contener letras, espacios y/o acentos.</p>
 				</div>
-			</div><br>
-			<div class="row">
 				<div class="formulario__grupo col-md" id="grupo__mail">
 					<label for="mail" class="formulario__label">Correo Electrónico</label>
 					<div class="formulario__group-input">
@@ -64,18 +62,37 @@
 					</div>
 					<p class="formulario__error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
 				</div>
+			</div><br>
+			<div class="row">
 				<div class="formulario__grupo col-md" id="grupo__fecha_nac">
 					<label for="fecha_nac" class="formulario__label">Fecha de Nacimiento</label>
 					<div class="formulario__group-input">
-						<input type="date" name="fecha_nac" id="fecha_nac" class="formulario__input" required>
+						<input type="date" name="fecha_nac" id="fecha_nac" class="formulario__input" required="required">
 						<i class="formulario__validacion-estado fas fa-times-circle"></i>
 					</div>
 					<p class="formulario__error">Este campo no puede estar vacío.</p>
 				</div>
+				<div class="formulario__grupo col-md" id="grupo__carrera">
+					<label for="carrera" class="formulario__label">Carreras</label>
+					<select name="carrera" id="carrera">
+						<option value="0" name="sistemas" id="sistemas" for="carrera">Ing. en Sistemas</option>
+						<option value="1" name="civil" id="civil" for="carrera">Ing. Cívil</option>
+						<option value="2" name="gestion" id="gestion" for="carrera">Ing. en Gestión Empresarial</option>
+						<option value="3" name="industrial" id="industrial" for="carrera">Ing. Industrial</option>
+					</select>
+				</div>
+				<div class="formulario__grupo col-md" id="grupo__no_control">
+					<label for="no_control" class="formulario__label">Número de Control</label>
+					<div class="formulario__group-input">
+						<input type="text" name="no_control" id="no_control" class="formulario__input" placeholder="Digite su no. de control">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formulario__error">El número de control no puede estar vacío.</p>
+				</div>
 				<div class="form-group col-md">
 					<label for="estado_civil" class="formulario__label">Estado Civil</label>
 					<div class="form-check col-md-12">
-						<input class="form-check-input" type="radio" name="estado_civil" id="solt" value="0" required>
+						<input class="form-check-input" type="radio" name="estado_civil" id="solt" value="0" required="required">
 						<label class="form-check-label" for="solt">
 							Soltero
 						</label>
