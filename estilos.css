@@ -1,0 +1,333 @@
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	body{
+		/* font-family: Verdana; */
+		font-family: 'Hubballi', cursive;
+	}
+	/*Header */
+	.encabezado,.inicio{
+		/*Imagen con alta resolución para que ocupe toda la pantalla */
+		background: url('img/mountain.png');
+		background-position: center center;
+		background-size: cover; 
+		height: 70vh;
+		min-height: 400px;
+	}
+	.contenedor{
+		/* background: rgb(131,58,180); */
+		/* background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); */
+		width: 100%;
+		height: 80%;
+		margin: 10px auto;
+	}
+	.contenedor-header{
+		max-width: 1200px;
+		margin:0 auto;
+	}
+	.contenedor-header img{
+		max-width: 300px;
+		padding: 20px 0px;
+	}
+
+	.barra-logo{
+		display: flex;
+		justify-content: space-between;
+		align-items:center;
+		padding-top: 20px;
+	}
+
+	.imglogo{
+		width: 100%;
+		/* height: 50%;
+		background-color: rgba(255,255,255,.6);
+		border-radius: 15px; */
+	}
+
+	.features-icons{
+		/* width: auto; */
+		text-align: center;
+	}
+
+	.formulario{
+		color: #3A3845;
+		display: flex;
+		font-size: 18px;
+		align-items:flex-end;
+		padding: 30px;
+		flex-direction: column;
+		/* height: 300px; */
+		width: 250px;
+		border-radius: 20px;
+		float: right;
+		/* background-color: #F0A500; */
+		background-color: rgba(255,255,255,.6);
+		/* background-color: #F4F9F9; */
+		text-decoration: none;
+		/* opacity: 50%; */
+		/* animation-duration: 3s;
+		animation-name: linear; */
+		line-height: 1.6;
+	}
+
+	.text-box{
+		padding: 9px 9px 9px 10px;
+		font-size: 15px;
+		outline: none;
+		color: #171010;
+		border: #fff;
+		/* border-bottom: 1px solid #171010; */
+		border-radius: 15px;
+		/* background-color: transparent;
+		border: 1px;
+		border-bottom-style: solid; */
+	}
+
+	.text-box:hover{
+		background-color: #F4F9F9;
+	}
+
+	.btnform{
+		margin: 10px;
+		width: 70px;
+		height: 30px;
+		font-size: 15px;
+		cursor: pointer;
+		border: none;
+		border-radius: 15px;
+	}
+
+	.btnform:hover{
+		color: #F4F9F9;
+		background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	}
+
+	/* @keyframes linear  {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+} */
+	.menu a{
+		/* color: rgba(255,255,255,1); */
+		/* color: #F0A500; */
+		color: #3A3845;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 25px;
+		margin-right: 5px;
+		padding: 10px;
+		display: inline-block;
+		/* background: rgba(255,255,255,.6); */
+	}
+
+	/* h1{
+		color:  rgba(252,176,69,1);
+	} */
+
+	.menu a:hover{
+		color: rgba(255,255,255,.6);;
+	}
+
+	.menu a:last-of-type{
+		margin: 0;
+	}
+
+	.servicios{
+		display: block;
+		text-align: center;
+		margin: 10px auto;
+		width: 80%;
+	}
+
+	.box_servicios{
+		width: 30%;
+		float: left;
+		padding: 10px;
+		text-align: center;
+		margin: 10px;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+		/* background: #f6f8f9; Old browsers */
+		/* background: -moz-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%); FF3.6-15 */
+		/* background: -webkit-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); Chrome10-25,Safari5.1-6 */
+		/* background: linear-gradient(to bottom, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%); W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		/* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); IE6-9 */
+	}
+
+	.contenedor-principal{
+		display: contents;
+		float: left;
+		position: relative;
+		height: 100%;
+		width: 80%;
+	}
+	.noticias{
+		width: 65%;
+		float: left;
+		margin: 10px 5px;
+		padding: 10px;
+		line-height: 1.6;
+		/* background-color: #EFEFEF; */
+		height: 100%;	
+	}
+	.novedades{
+		width: 30%;
+		height: 245px;
+		float: left;
+		padding: 10px;
+		margin: 10px 5px;
+		line-height: 1.6;
+		/* background-color: #EFEFEF; */
+		display: inline;
+	}
+	.pie{
+		float: left;
+		display: block;
+		width: 100%;
+		position: relative;
+		padding: 0px;
+		margin: auto 5px;
+		text-align: center;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b5bdc8+0,828c95+36,28343b+100;Grey+Black+3D */
+		background: #b5bdc8; /* Old browsers */
+		background: -moz-linear-gradient(top, #b5bdc8 0%, #828c95 36%, #28343b 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, #b5bdc8 0%,#828c95 36%,#28343b 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, #b5bdc8 0%,#828c95 36%,#28343b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+	}
+	
+	.about, .enlaces, .gmaps{
+		width: 33%;
+		margin: 0 2px;
+		float: left;
+		background-color: rgba(255, 255, 255, 0.3);
+		padding: 10px 0 0 0;
+		font-size: 14px;
+		height: 200px;
+	}
+	.derechos{
+		color: white;
+		height: 20px;
+		padding: 20px 0 10px 0;
+		display:inline-block;
+		margin: auto;
+		font-size: 12px;
+	}
+
+	/* ESTILOS DEL FORM.PHP */
+	/* .main{
+		max-width: 800px;
+		width: 90%;
+		margin: auto;
+		padding: 40px;
+	} */
+
+	/* .formulario{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 20px;
+	} */
+
+	.formulario__label{
+		display: block;
+		font-size: 20px;
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	.formulario__group-input{
+		position: relative;
+	}
+
+	.formulario__input{
+		width: 100%;
+		background: #fff;
+		font-size: 18px;
+		border: 1.5px solid #828c95;
+		border-radius: 5px;
+		height: 45px;
+		line-height: 45px;
+		padding: 0 40px 0 10px;
+		transition: .3s ease all;
+	}
+
+	.formulario__input:focus{
+		border: 1.5px solid #0075FF;
+		outline: none;
+		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+	}
+
+	.formulario__error{
+		font-size: 15px;
+		font-weight: 700;
+		margin-bottom: 0;
+		display: none;
+	}
+
+	.formulario__error-activo{
+		display: block;
+	}
+
+	.formulario__validacion-estado{
+		position: absolute;
+		right: 10px;
+		bottom: 15px;
+		z-index: 100;
+		font-size: 16px;
+		opacity: 0;
+	}
+
+	.formulario__mensaje{
+		height: 45px;
+		line-height: 45px;
+		font-size: 20px;
+		background: #F66060;
+		padding: 0 15px;
+		border-radius: 5px;
+		display: none;
+	}
+
+	.formulario__mensaje-activo{
+		display: block;
+	}
+
+	.formulario__mensaje p{
+		margin: 0;
+	}
+
+	/* ESTILOS PARA LAS VALIDACIONES DEL FORM.PHP */
+	.formulario__grupo-correcto .formulario__validacion-estado{
+		color: #1ed12d;
+		opacity: 1;
+	}
+
+	.formulario__grupo-incorrecto .formulario__label{
+		color: #bb2929;
+	}
+
+	.formulario__grupo-incorrecto .formulario__validacion-estado{
+		color: #bb2929;
+		opacity: 1;
+	}
+
+	.formulario__grupo-incorrecto .formulario__input{
+		border: 1.5px solid #bb2929;
+	}
+
+	.formulario__mensaje-exito{
+		font-size: 15px;
+		color: #119200;
+		text-transform: uppercase;
+		display: none;
+		padding: 5px;
+	}
+
+	.formulario__mensaje-exito-activo{
+		display: block;
+	}

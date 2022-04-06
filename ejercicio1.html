@@ -1,0 +1,160 @@
+<!-- MTI. Jorge Cein Villanueva Guzmán
+Uso de nueva semantica HTML5 y aplicación de roles WAI-ARIA para accesibilidad
+https://www.w3.org/TR/wai-aria/#role_definitions 
+
+La vulnerabilidad target=”_blank” y la solución rel=”noopener noreferrer”
+https://medium.com/@ali.dev/how-to-fix-target-blank-a-security-and-performance-issue-in-web-pages-2118eba1ce2f
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> <!-- Definición de codificación de caracteres -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Primer documento con HTML5 y CSS3">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"><!-- Controla el tamaño y escala del sitio en el navegador-->
+	<meta name="keywords" content="html, js, css, web, internet">
+	<title>Mi primer documento en HTML5</title> <!-- Título del documento HTML -->
+	<link rel="stylesheet" href="estilos.css"> <!-- enlace a hoja de estilo externa-->
+	<!-- Fuente GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style type="text/css">
+		body{
+			/*Regla CSS para uso de la fuente GOOGLE FONTS*/
+			font-family: 'Hubballi', cursive;
+		}
+		.btnimg {
+			width: 50px;
+			border-radius: 80%;
+			height: 50px;
+		}
+		/* #id {
+
+		} */
+	</style>
+</head>
+<body>
+	<div class="contenedor"> <!-- Contenedor principal -->
+		<header class="encabezado inicio" role="banner"> <!-- Uso de la etiqueta header y aplicación del rol -->
+			<div class="contenedor-header">
+				<div class="barra-logo"> 
+					<img class="imglogo" src="img/logo-vigux.png">
+					<nav class="menu" role="navigation" id="menu"> <!-- Uso de la etiqueta nav y aplicación del rol -->
+						<a href="index.html" title="" target="_blank" role="link">Inicio</a>
+						<a href="about.html" title="" role="link">Sobre el autor</a>
+						<a href="#news" title="" role="link">Noticias</a>
+						<!-- <a href="img/css3.png" title="Hojas de Estilo en Cascada 3" target="_blank">
+							<img src="img/css3.png" alt="Hojas de Estilo en Cascada 3" class="btnimg">
+						</a> -->
+					</nav>	
+				</div>
+				<div>
+					<!-- <form class="formulario">
+						Nombre <input class= "text-box" type="text">
+						Apellido paterno <input class= "text-box" type="text">
+						Apellido materno <input class= "text-box" type="text">
+						<input class="btnform" type="submit" value="Enviar">
+					</form> -->
+				</div>
+			</div>
+			
+		</header><!-- /header -->
+		<main class="contenedor-principal" role="main"> <!-- Uso de la etiqueta main para identificar el área principal del documento y aplicación del rol -->
+			<section class="bg-light features-icons" style="padding: 10px; margin-top: 30px;">
+                <div class="container-botonera">
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-6">
+							<a href="form.php"> <img src="img/register.png" style="width: 20%; margin: 20px;"> </a>
+							<p><a href="form.php">Ver formulario</a></p>
+                        </div>
+						<div class="col-md-6">
+							<a href="tabla.php"> <img src="img/user.png" style="width: 20%; margin: 20px;"> </a>
+							<p><a href="tabla.php">Ver tabla</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+			<section class="servicios"> <!-- Uso de la etiqueta section para identificar secciones dentro del main-->
+				<div class="box_servicios">
+					<h2>HTML5</h2>
+					<img src="img/html5.png" alt="" style="height: 200px">
+					<p><a href="file/file1.pdf" download title="">Descargar archivo</a></p> <!-- Uso del atributo download para definir descarga de un archivo -->
+				</div>
+				<div class="box_servicios">
+					<h2>CSS3</h2>
+					<img src="img/css3.png" alt="" style="height: 200px">
+					<p><a href="https://www.w3.org/TR/2018/REC-selectors-3-20181106/" target="_blank" rel=”noopener noreferrer” title="">Recomendación oficial </a> </p><!-- Corrección de la vulnerabilidad al uso de target _blank -->
+				</div>
+				<div class="box_servicios">
+					<h2>JavaScript</h2>
+					<img src="img/js.png" alt="" style="height: 200px">
+					<p><a href="https://www.w3.org/TR/2018/REC-selectors-3-20181106/" target="_blank" rel=”noopener noreferrer” title="">Recomendación oficial </a> </p><!-- Corrección de la vulnerabilidad al uso de target _blank -->
+				</div>								
+			</section>
+
+			<section id="news" class="noticias"> <!-- Definición de id para usar como ancla -->
+				<h1>ÚLTIMAS NOTICIAS</h1>
+				<hr>
+				<article role="article"> <!-- Uso de la etiqueta article para presentar noticias o contenido categorizado y aplicación del rol -->
+					<h3>Aprende a programar en PHP</h3>
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+				</article>
+				<article role="article">
+					<h3>Aprende a programar en Phyton</h3>
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+				</article>
+				<a href="#menu" title="">Volver</a>	<!-- Uso de anclas para navegar dentro del mismo documento -->	
+			</section>
+		
+		<aside role="complementary" class="novedades"> <!-- Uso de la etiqueta aside para crear columnas. Su diseño depende de CSS. -->
+			<h1>NOVEDADES</h1>
+			<hr>
+			<div>
+				<h3>Nuevas tipografías</h3>
+				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>	
+			<div>
+				<h3>Nuevas tipografías</h3>
+				<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+			</div>				
+		</aside>
+		</main>
+
+	<footer role="contentinfo" class="pie">		
+		<div class="about">
+			<h2>Sobre el autor</h2> 
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua.</p>
+		</div>
+		<div class="enlaces">
+			<nav>
+				<ul>
+					<li><a href="index.html" title="" role="link">Inicio</a></li>
+					<li><a href="about.html" title="" role="link">Sobre el autor</a></li>
+					<li><a href="#news" title="" role="link">Noticias</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="gmaps">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.0463795086343!2d-92.90582898608355!3d18.023051087700644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85edd879239171bd%3A0xae9e157e4228aad3!2sInstituto%20Tecnol%C3%B3gico%20de%20Villahermosa!5e0!3m2!1ses-419!2smx!4v1619746082441!5m2!1ses-419!2smx" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		</div>
+		<div class="derechos">
+			<p>Todos los derechos reservados &copy; Vigux.com.mx 2019.</p>
+		</div>
+	</footer>
+	</div>	
+</body>
+</html>
