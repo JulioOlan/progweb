@@ -7,6 +7,7 @@ const expresiones = {
 	materno: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     no_control: /^[0-9]{8}$/,
+    telefono: /^[0-9]{10}$/,
     // fecha_nac: /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[1-9]|2[1-9])$/,
 }
 
@@ -16,6 +17,7 @@ const campos = {
     materno: false,
     correo: false,
     no_control: false,
+    telefono: false,
     // carrera: false,
     // fecha_nac: false
     // estado_civil: false
@@ -37,6 +39,9 @@ const validarFormulario = (e) => {
         break;
         case "no_control":
             validarCampo(expresiones.no_control, e.target, 'no_control');
+        break;
+        case "telefono":
+            validarCampo(expresiones.telefono, e.target, 'telefono');
         break;
         // case "fecha_nac":
         //     validarCampo(expresiones.fecha_nac, e.target, 'fecha_nac');
@@ -76,7 +81,7 @@ inputs.forEach((input) => {
 $('#guardar').on('click', function (e) {
     e.preventDefault();
 
-    if (campos.nombre && campos.appat && campos.apmat && campos.mail && campos.no_control) {
+    if (campos.nombre && campos.appat && campos.apmat && campos.mail && campos.no_control && campos.telefono) {
         let params = $('form').serializeArray();
 
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');

@@ -44,8 +44,10 @@
 						<th>ID</th>
 						<th>Nombre(s)</th>
 						<th>Fecha Nacimiento</th>
-						<th>Estado Civil</th>
+						<th>Correo Electrónico</th>
+						<th>Teléfono</th>
 						<th>No. de Control</th>
+						<th>Sexo</th>
 						<th>Carrera</th>
 						<th>Acciones</th>
 					</tr>
@@ -61,23 +63,39 @@
 								<small><em>Fecha registro: <?= $row["fecha_registro"] ?></em></small>
 							</td>
 							<td><?= $newFecha ?></td>
-							<td><?php
-								if ($row["estado_civil"] == 0) {
-									echo "Soltero";
-								} else {
-									echo "Casado";
-								}
-								?></td>
+							<td><?= $row["mail"] ?></td>
+							<td><?= $row["telefono"] ?></td>
 							<td><?= $row["no_control"] ?></td>
 							<td><?php
-								if ($row["carrera"] == 0) {
-									echo "Ing. en Sistemas";
-								} elseif ($row["carrera"] == 1){
-									echo "Ing. Cívil";
-								} elseif ($row["carrera"] == 2){
-									echo "Ing. en Gestión Empresarial";
+								if ($row["sexo"] == 0) {
+									echo "Hombre";
+								} else {
+									echo "Mujer";
+								}
+								?></td>
+							<td><?php
+								if ($row["fkcarrera"] == 1) {
+									echo "Ing Cívil";
+								} elseif ($row["fkcarrera"] == 2){
+									echo "Ing Química";
+								} elseif ($row["fkcarrera"] == 3){
+									echo "Ing Petrolera";
+								} elseif ($row["fkcarrera"] == 4){
+									echo "Ing Ambiental";
+								} elseif ($row["fkcarrera"] == 5){
+									echo "Ing Industrial";
+								} elseif ($row["fkcarrera"] == 6){
+									echo "Ing Bioquímica";
+								} elseif ($row["fkcarrera"] == 7){
+									echo "Ing Informática";
+								} elseif ($row["fkcarrera"] == 8){
+									echo "Lic en Administración";
+								} elseif ($row["fkcarrera"] == 9){
+									echo "Ing en Gestión Empresarial";
+								} elseif ($row["fkcarrera"] == 10){
+									echo "Ing en Sistemas Computacionales";
 								} else{
-									echo "Ing. Industrial";
+									echo "Ing en TIC";
 								}
 								?></td>
 							<!-- ?id= Se usa para pasar por get una variable de nombre id y despues del signo = se coloca el valor de la variable, en este caso se tomará de la variable $row['id'] -->

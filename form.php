@@ -25,8 +25,8 @@
 				<li class="breadcrumb-item active" aria-current="page">FORMULARIO</li>
 			</ol>
 		</nav><br>
-		<p><a class="btn btn-warning text-right" href="tabla.php">Ver tabla de Usuarios</a></p>
-		<p><a class="btn btn-danger text-right" href="datatable.php">DataTable</a></p>
+		<!-- <p><a class="btn btn-warning text-right" href="tabla.php">Ver tabla de Usuarios</a></p> -->
+		<p><a class="btn btn-warning text-right" href="datatable.php">Tabla de Usuarios</a></p>
 
 		<form id="formulario" action="insert_exe.php" method="post">
 			<div class="row">
@@ -64,6 +64,14 @@
 				</div>
 			</div><br>
 			<div class="row">
+				<div class="formulario__grupo col-md" id="grupo__telefono">
+					<label for="telefono" class="formulario__label">Teléfono</label>
+					<div class="formulario__group-input">
+						<input type="text" name="telefono" id="telefono" class="formulario__input" placeholder="Digite su teléfono">
+						<i class="formulario__validacion-estado fas fa-times-circle"></i>
+					</div>
+					<p class="formulario__error">Este campo no puede estar vacío.</p>
+				</div>
 				<div class="formulario__grupo col-md" id="grupo__fecha_nac">
 					<label for="fecha_nac" class="formulario__label">Fecha de Nacimiento</label>
 					<div class="formulario__group-input">
@@ -72,13 +80,20 @@
 					</div>
 					<p class="formulario__error">Este campo no puede estar vacío.</p>
 				</div>
-				<div class="formulario__grupo col-md" id="grupo__carrera">
-					<label for="carrera" class="formulario__label">Carreras</label>
-					<select name="carrera" id="carrera">
-						<option value="0" name="sistemas" id="sistemas" for="carrera">Ing. en Sistemas</option>
-						<option value="1" name="civil" id="civil" for="carrera">Ing. Cívil</option>
-						<option value="2" name="gestion" id="gestion" for="carrera">Ing. en Gestión Empresarial</option>
-						<option value="3" name="industrial" id="industrial" for="carrera">Ing. Industrial</option>
+				<div class="formulario__grupo col-md" id="grupo__fkcarrera">
+					<label for="fkcarrera" class="formulario__label">Carreras</label>
+					<select name="fkcarrera" id="fkcarrera">
+						<option value="1" name="civil" id="civil" for="carrera">Ing Cívil</option>
+						<option value="2" name="quimica" id="quimica" for="carrera">Ing Química</option>
+						<option value="3" name="petrolera" id="petrolera" for="carrera">Ing Petrolera</option>
+						<option value="4" name="ambiental" id="ambiental" for="carrera">Ing Ambiental</option>
+						<option value="5" name="industrial" id="industrial" for="carrera">Ing Industrial</option>
+						<option value="6" name="bioquimica" id="bioquimica" for="carrera">Ing Bioquímica</option>
+						<option value="7" name="informatica" id="informatica" for="carrera">Ing Informática</option>
+						<option value="8" name="admin" id="admin" for="carrera">Lic en Administración</option>
+						<option value="9" name="gestion" id="gestion" for="carrera">Ing en Gestión Empresarial</option>
+						<option value="10" name="sistemas" id="sistemas" for="carrera">Ing en Sistemas Computacionales</option>
+						<option value="11" name="tic" id="tic" for="carrera">Ing en TIC</option>
 					</select>
 				</div>
 				<div class="formulario__grupo col-md" id="grupo__no_control">
@@ -90,17 +105,17 @@
 					<p class="formulario__error">El número de control no puede estar vacío.</p>
 				</div>
 				<div class="form-group col-md">
-					<label for="estado_civil" class="formulario__label">Estado Civil</label>
+					<label for="sexo" class="formulario__label">Sexo</label>
 					<div class="form-check col-md-12">
-						<input class="form-check-input" type="radio" name="estado_civil" id="solt" value="0" required="required">
-						<label class="form-check-label" for="solt">
-							Soltero
+						<input class="form-check-input" type="radio" name="sexo" id="hombre" value="0" required="required">
+						<label class="form-check-label" for="hombre">
+							Hombre
 						</label>
 					</div>
 					<div class="form-check col-md-12">
-						<input class="form-check-input" type="radio" name="estado_civil" id="casado" value="1">
-						<label class="form-check-label" for="casado">
-							Casado
+						<input class="form-check-input" type="radio" name="sexo" id="mujer" value="1">
+						<label class="form-check-label" for="mujer">
+							Mujer
 						</label>
 					</div>
 				</div>
