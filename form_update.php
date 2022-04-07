@@ -14,10 +14,15 @@ if ($cons=mysqli_query($conn, $sql)) {
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
 	<title><?=$reg['nombre']?></title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="estilos.css">
+	<!-- Fuente GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+
+
 </head>
 <body>		
 	<div class="container">
@@ -33,12 +38,12 @@ if ($cons=mysqli_query($conn, $sql)) {
 		<!-- <p><a class="btn btn-warning text-right" href="tabla.php">Ver tabla de Usuarios</a></p> -->
 		<p><a class="btn btn-warning text-right" href="datatable.php">Tabla de Usuarios</a></p>
 
-		<form id="formulario1" action="insert_exe.php" method="post">
+		<form id="formulario" action="update_exe.php" method="post">
 			<div class="row">
 				<div class="formulario__grupo col-md" id="grupo__nombre">
 					<label for="nombre" class="formulario__label">Nombre(s)</label>
 					<div class="formulario__group-input">
-						<input type="text" name="nombre" class="formulario__input" value="<?=$reg['nombre']?>">
+						<input type="text" name="nombre" id="nombre" class="formulario__input" value="<?=$reg['nombre']?>">
 						<i class="formulario__validacion-estado fas fa-times-circle"></i>
 					</div>
 					<p class="formulario__error">El nombre(s) solo debe contener letras, espacios y acentos.</p>
@@ -123,6 +128,7 @@ if ($cons=mysqli_query($conn, $sql)) {
 							Mujer
 						</label>
 					</div>
+					<input type="hidden" name="id" value="<?= $reg['id'] ?>">
 				</div>
 			</div>
 			<div class="formulario__mensaje" id="formulario__mensaje">
@@ -138,7 +144,7 @@ if ($cons=mysqli_query($conn, $sql)) {
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/validaciones.js"></script>
+	<script src="js/validaciones-update.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://kit.fontawesome.com/637592b28d.js" crossorigin="anonymous"></script>
 </body>

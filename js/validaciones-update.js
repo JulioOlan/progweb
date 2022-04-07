@@ -1,5 +1,7 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
+let boton = document.querySelector('#actualizar');
+boton.disabled = true;
 
 const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -62,15 +64,18 @@ const validarCampo = (expresion, input, campo) => {
         document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
         document.querySelector(`#grupo__${campo} .formulario__error`).classList.remove('formulario__error-activo');
-        campos[campo] = true;
+        campos[campo]  = true;
+        boton.disabled = false;
     } else {
         document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
         document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
         document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
         document.querySelector(`#grupo__${campo} .formulario__error`).classList.add('formulario__error-activo');
-        campos[campo] = false;
+        campos[campo]  = false;
+        boton.disabled = true;
     }
+    
 }
 
 inputs.forEach((input) => {
@@ -78,46 +83,12 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 
-$('#guardar').on('click', function (e) {
-    e.preventDefault();
-
-    if (campos.nombre && campos.appat && campos.apmat && campos.mail && campos.no_control && campos.telefono) {
-        let params = $('form').serializeArray();
-
-        document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-        // document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-
-        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-            icono.classList.remove('formulario__grupo-correcto');
-        });
-        $.ajax({
-            url: 'insert_exe.php',
-            type: 'POST',
-            data: params,
-            dataType: 'json',
-        }).done(function (data) {
-
-        })
-        formulario.reset();
-        Swal.fire({
-                icon: 'success',
-                title: 'ÉXITO!',
-                text: 'Datos registrados correctamente',
-            })
-    } else {
-        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
-    }
-
-});
-
 $('#actualizar').on('click', function (e) {
     e.preventDefault();
-
-    if (campos.nombre && campos.appat && campos.apmat && campos.mail && campos.no_control && campos.telefono) {
+    if (campos.nombre || campos.appat || campos.apmat || campos.mail || campos.no_control || campos.telefono) {
         let params = $('form').serializeArray();
-
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-        // document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        //document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formulario__grupo-correcto');
@@ -128,28 +99,15 @@ $('#actualizar').on('click', function (e) {
             data: params,
             dataType: 'json',
         }).done(function (data) {
-
         })
-        formulario.reset();
         Swal.fire({
                 icon: 'success',
                 title: 'ÉXITO!',
                 text: 'Datos registrados correctamente',
             })
+        location.href = 'datatable.php';
     } else {
         document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
     }
 
 });
-
-// document.getElementById ("guardar").formulario.addEventListener('click', (e) => {
-//     // e.preventDefault();
-
-//     if(campos.nombre && campos.paterno && campos.materno && campos.correo){
-//         formulario.reset();
-//         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-//     } 
-//     // else{
-//     //     document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo')
-//     // }
-// })

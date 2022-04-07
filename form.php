@@ -134,7 +134,7 @@
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/validaciones.js"></script>
+	<script src="js/validaciones-insert.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://kit.fontawesome.com/637592b28d.js" crossorigin="anonymous"></script>
 </body>

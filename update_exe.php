@@ -2,6 +2,7 @@
 include('db/db.php');
 
 //Recibir mediante post los campos que se van a actualizar
+$id             = $_POST['id'];
 $nombre         = $_POST['nombre'];
 $appat          = $_POST['appat'];
 $apmat          = $_POST['apmat'];
@@ -16,7 +17,7 @@ $carrera        = $_POST['fkcarrera'];
 // $fecha_registro=date("Y-m-d | H:i:s a");
 
 
-$sql = "UPDATE datos_personales SET nombre='$nombre',appat='$appat',apmat='$apmat',fecha_nac='$fecha_nac',fecha_update='$fecha_update',mail='$mail',telefono='$telefono',no_control='$no_control',sexo='$sexo',carrera='$fkcarrera', WHERE id=$id";
+$sql = "UPDATE datos_personales SET nombre='$nombre',appat='$appat',apmat='$apmat',fecha_nac='$fecha_nac',fecha_update='$fecha_update',mail='$mail',telefono='$telefono',no_control='$no_control',sexo='$sexo',fkcarrera='$carrera' WHERE id = $id";
 
 if (mysqli_query($conn, $sql)) {
   // echo "Registro actualizado correctamente";

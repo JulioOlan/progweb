@@ -100,7 +100,8 @@
 								?></td>
 							<!-- ?id= Se usa para pasar por get una variable de nombre id y despues del signo = se coloca el valor de la variable, en este caso se tomará de la variable $row['id'] -->
 							<td><a class="btn btn-warning" href="form_update.php?id=<?= $row['id'] ?>"><i class="fas fa-eye"></i></a>
-								<a class="btn btn-danger" href="delete_exe.php?id=<?= $row['id'] ?>"><i class="fas fa-trash"></i></a>
+								<!-- <a class="btn btn-danger" href="delete_exe.php?id=<?php //$row['id'] ?>"><i class="fas fa-trash"></i></a> -->
+								<button class="btn btn-danger" onclick="pregunata(<?= $row['id'] ?>)"><i class="fas fa-trash"></i></button>
 							</td>
 						</tr>
 					<?php
@@ -122,7 +123,8 @@
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<!-- <script src="js/jquery-3.4.1.slim.min.js"></script> -->
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/validaciones.js"></script>
+	<script src="js/delete.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<!-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.24/r-2.2.7/rr-1.2.7/datatables.min.js"></script> -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<!-- <script src="//cdn.datatables.net/plug-ins/1.11.5/i18n/es-ES.json"></script> -->
