@@ -99,8 +99,10 @@
 								}
 								?></td>
 							<!-- ?id= Se usa para pasar por get una variable de nombre id y despues del signo = se coloca el valor de la variable, en este caso se tomará de la variable $row['id'] -->
-							<td><a class="btn btn-warning" href="form_update.php?id=<?= $row['id'] ?>"><i class="fas fa-eye"></i></a>
-								<!-- <a class="btn btn-danger" href="delete_exe.php?id=<?php //$row['id'] ?>"><i class="fas fa-trash"></i></a> -->
+							<td>
+								<!-- actualizar -->
+								<a class="btn btn-warning" href="form_update.php?id=<?= $row['id'] ?>"><i class="fas fa-eye"></i></a>
+								<!-- Borrar -->
 								<button class="btn btn-danger" onclick="pregunata(<?= $row['id'] ?>)"><i class="fas fa-trash"></i></button>
 							</td>
 						</tr>
