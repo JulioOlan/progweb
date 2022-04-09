@@ -14,13 +14,9 @@ $no_control     = $_POST['no_control'];
 $sexo           = $_POST['sexo'];
 $carrera        = $_POST['fkcarrera'];
 
-// $fecha_registro=date("Y-m-d | H:i:s a");
-
-
 $sql = "UPDATE datos_personales SET nombre='$nombre',appat='$appat',apmat='$apmat',fecha_nac='$fecha_nac',fecha_update='$fecha_update',mail='$mail',telefono='$telefono',no_control='$no_control',sexo='$sexo',fkcarrera='$carrera' WHERE id = $id";
 
 if (mysqli_query($conn, $sql)) {
-  // echo "Registro actualizado correctamente";
 } else {
   echo "Error actualizando registro: " . mysqli_error($conn);
 }

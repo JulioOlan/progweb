@@ -10,7 +10,6 @@ const expresiones = {
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     no_control: /^[0-9]{8}$/,
     telefono: /^[0-9]{10}$/,
-    // fecha_nac: /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(0[1-9]|1[1-9]|2[1-9])$/,
 }
 
 const campos = {
@@ -20,9 +19,6 @@ const campos = {
     correo: false,
     no_control: false,
     telefono: false,
-    // carrera: false,
-    // fecha_nac: false
-    // estado_civil: false
 }
 
 const validarFormulario = (e) => {
@@ -45,15 +41,6 @@ const validarFormulario = (e) => {
         case "telefono":
             validarCampo(expresiones.telefono, e.target, 'telefono');
         break;
-        // case "fecha_nac":
-        //     validarCampo(expresiones.fecha_nac, e.target, 'fecha_nac');
-        // break;
-        // case "carrera":
-        //     // validarCampo(expresiones.fecha_nac, e.target, 'fecha_nac');
-        // break;
-        // case "estado_civil":
-        //     // validarCampo(expresiones.nombre, e.target, 'estado_civil');
-        // break;
     }
 }
 
@@ -90,7 +77,6 @@ $('#guardar').on('click', function (e) {
         let params = $('form').serializeArray();
 
         document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
-        // document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 
         document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
             icono.classList.remove('formulario__grupo-correcto');
@@ -100,8 +86,6 @@ $('#guardar').on('click', function (e) {
             type: 'POST',
             data: params,
             dataType: 'json',
-        }).done(function (data) {
-
         })
         formulario.reset();
         Swal.fire({
@@ -114,5 +98,3 @@ $('#guardar').on('click', function (e) {
     }
 
 });
-
-

@@ -12,7 +12,7 @@ function pregunata(id){
         if (resultado.value) {
             // Hicieron click en "Sí"
             eliminardatos(id);
-            console.log("*Se elimino*");
+            console.log("*Se eliminó*");
         } else {
             // Dijeron que no
             console.log("*NO se elimina el registro*");
